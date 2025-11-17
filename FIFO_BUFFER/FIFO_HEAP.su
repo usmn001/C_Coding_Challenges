@@ -1,5 +1,7 @@
-/home/musman/Desktop/C_Coding_Challenges/FIFO_BUFFER/FIFO_HEAP.c:35:11:FIFO_Is_Buf_Full	16	static
-/home/musman/Desktop/C_Coding_Challenges/FIFO_BUFFER/FIFO_HEAP.c:62:11:FIFO_Add_Item	48	static
-/home/musman/Desktop/C_Coding_Challenges/FIFO_BUFFER/FIFO_HEAP.c:81:11:FIFO_Remove_Item	48	static
-/home/musman/Desktop/C_Coding_Challenges/FIFO_BUFFER/FIFO_HEAP.c:100:15:create_buffer	32	static
-/home/musman/Desktop/C_Coding_Challenges/FIFO_BUFFER/FIFO_HEAP.c:110:5:main	80	static
+/home/musman/Desktop/C_Coding_Challenges/FIFO_BUFFER/FIFO_HEAP.c:44:11:FIFO_Is_Buf_Full	16	static
+/home/musman/Desktop/C_Coding_Challenges/FIFO_BUFFER/FIFO_HEAP.c:71:11:FIFO_Add_Item	48	static
+/home/musman/Desktop/C_Coding_Challenges/FIFO_BUFFER/FIFO_HEAP.c:90:11:FIFO_Remove_Item	48	static
+/home/musman/Desktop/C_Coding_Challenges/FIFO_BUFFER/FIFO_HEAP.c:109:15:create_buffer	32	static
+/home/musman/Desktop/C_Coding_Challenges/FIFO_BUFFER/FIFO_HEAP.c:120:7:__wrap_malloc	32	static
+/home/musman/Desktop/C_Coding_Challenges/FIFO_BUFFER/FIFO_HEAP.c:126:6:__wrap_free	32	static
+/home/musman/Desktop/C_Coding_Challenges/FIFO_BUFFER/FIFO_HEAP.c:132:5:main	80	static

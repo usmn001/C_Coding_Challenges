@@ -5,6 +5,9 @@
  Version     :
  Copyright   : Your copyright notice
  Description : FIFO_BUFFER implementation in C Using MALLLOC and STRUCTS
+               FIFO BUFFER IS CIRCULAR OR RING BUFFER WHERE DATA IS REMOVED FROM START ADDRESS AND ADDED
+			   STARTING FROM 1ST ADDRESS TILL END ADDRESS IS REACHED.
+			    
                   
 
  ============================================================================
@@ -71,7 +74,7 @@ FB_Status status;
 		fbuf_s->head= fbuf_s->head+1;
 		status = FB_NO_ERROR;
 	}
-	else
+	else if( FIFO_Is_Buf_Full(fbuf_s)==FB_FULL)
 	{
 		status = FB_FULL;
 	}
@@ -83,7 +86,7 @@ FB_Status FIFO_Remove_Item (FIFO_BUF_st *fbuf_s) // This iteam can also be a str
 {
 	FB_Status status;
 
-	if( FIFO_Is_Buf_Full(fbuf_s)==FB_NOT_FULL )
+	if( FIFO_Is_Buf_Full(fbuf_s)!=FB_NOT_EMPTY) 
 	{
 		uint32_t item = *(fbuf_s->base);	
 		printf("Popped item is %i \n",item);
@@ -103,6 +106,7 @@ fbuf_ptr->base= (uint32_t*)malloc(sizeof(length)*32);   // Here we could have al
 fbuf_ptr->tmp = fbuf_ptr->base;  // TEMP POINTER TO HOLD THE BASE ADDRESS FOR FREE OPERATION
 fbuf_ptr->head = fbuf_ptr->base;
 fbuf_ptr->length= length;
+
 return fbuf_ptr;
 }
 
@@ -116,6 +120,10 @@ int main ()
 	fbuf1.length = 32;
 
 	fbuf_ptr = create_buffer(&fbuf1,fbuf1.length);
+	if(fbuf_ptr->base == NULL)
+	{
+		printf("Buffer creation failed \n");
+	}
     
     FIFO_Add_Item(fbuf_ptr,10);
 	FIFO_Add_Item(fbuf_ptr,20);	
@@ -127,10 +135,6 @@ int main ()
 
 	free(fbuf_ptr->tmp); 
 	 
-	
-  
-	
-
 	return 0;
 }
 
