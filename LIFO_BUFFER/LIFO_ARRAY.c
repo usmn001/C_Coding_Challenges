@@ -5,7 +5,9 @@
  Version     :
  Copyright   : Your copyright notice
  Description : LIFO_BUFFER implementation in C Using Arrays
-                  
+               This is how a stack works in memory (LIFO)
+			   Push operation adds item to the top of stack	
+			   Pop operation removes item from the top of stack
 
  ============================================================================
  */
@@ -61,6 +63,7 @@ LB_Status LIFO_push (int item)
 	if(top < BUFFER_SIZE)
 	{
 		BUF_ARRAY[top] = item;
+		printf("Added item is %i \n",item);
 		status_e = LB_NO_ERROR;
 	}
 	else if (top >= BUFFER_SIZE)

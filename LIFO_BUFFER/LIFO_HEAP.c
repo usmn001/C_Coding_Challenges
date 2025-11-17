@@ -5,6 +5,9 @@
  Version     :
  Copyright   : Your copyright notice
  Description : LIFO_BUFFER implementation in C Using MALLLOC and STRUCTS
+               This is how a stack works in memory (LIFO)
+			   Push operation adds item to the top of stack	
+			   Pop operation removes item from the top of stack
                   
 
  ============================================================================
@@ -109,6 +112,11 @@ int main ()
 	lbuf1.length = 32;
 
 	lbuf_ptr = create_buffer(&lbuf1,lbuf1.length);
+	if(lbuf_ptr->base == NULL)
+	{
+		printf("Buffer creation failed \n");
+		return -1;
+	}
     
     LIFO_Add_Item(lbuf_ptr,10);
 	LIFO_Add_Item(lbuf_ptr,20);	
